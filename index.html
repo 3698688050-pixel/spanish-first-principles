@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9ece9">
+  <meta name="description" content="Lógica：面向中文母语者的西语第一性原理学习台。先理解，再调用。">
+  <title>Lógica · 西语第一性原理学习台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="学习导航">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">L</div>
+        <div>
+          <p class="brand-name">LÓGICA</p>
+          <p class="brand-subtitle">西语底层学习台</p>
+        </div>
+      </div>
+
+      <div class="side-rule"></div>
+
+      <section class="progress-module" aria-labelledby="progress-title">
+        <p class="section-kicker" id="progress-title">理解进度</p>
+        <div class="progress-readout"><strong id="progress-number">0</strong><span>/ 4 原理</span></div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        <p class="progress-note" id="progress-note">先完成一个理解，不急着背。</p>
+      </section>
+
+      <nav class="primary-nav" aria-label="主导航">
+        <button class="nav-item active" data-view="learn"><span class="nav-dot"></span>继续学习</button>
+        <button class="nav-item" data-view="map"><span class="nav-dot"></span>底层路线</button>
+        <button class="nav-item" data-view="review"><span class="nav-dot"></span>最小回看 <span class="nav-count" id="review-count">0</span></button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <p>目标不是记住更多。</p>
+        <p>是让一句话变成下一句话。</p>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="breadcrumb"><span>西语</span><span class="breadcrumb-slash">/</span><strong id="view-title">继续学习</strong></div>
+        <div class="quiet-status"><span class="status-light"></span><span>本地保存</span></div>
+      </header>
+
+      <section class="view active" id="learn-view" aria-labelledby="learn-heading">
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">今天只处理一个底层关系</p>
+            <h1 id="learn-heading">先看懂，再开口。</h1>
+          </div>
+          <div class="lesson-counter"><span id="lesson-index">01</span><span class="counter-line"></span><span>04</span></div>
+        </div>
+
+        <article class="lesson-console" id="lesson-console">
+          <div class="console-header">
+            <div>
+              <p class="console-label">输入先行</p>
+              <p class="console-context" id="lesson-context">讲述小时候的生活</p>
+            </div>
+            <span class="difficulty">i + 1</span>
+          </div>
+
+          <div class="input-stage">
+            <p class="sentence" id="sentence">Cuando era niño, vivía en Madrid.</p>
+            <p class="translation" id="translation">我小时候住在马德里。</p>
+            <p class="audio-hint">这句话先不用分析。先让意思完整地到达。</p>
+          </div>
+
+          <div class="console-actions">
+            <button class="button button-primary" id="understand-button">我大致看懂了</button>
+            <button class="button button-quiet" id="reveal-button" aria-expanded="false">展开底层原理</button>
+          </div>
+
+          <div class="principle-drawer" id="principle-drawer" hidden>
+            <div class="layer-block understanding-layer">
+              <span class="layer-tag">理解层</span>
+              <h2 id="principle-title">过去不是一条线，而是一个取景框。</h2>
+              <p id="principle-body">说话人把“小时候的生活”铺成一张背景画布：住在哪里、当时是什么状态，都在画布里持续着。未完成过去时不是“过去式清单”里的一个格子，而是<strong>把参照点放进背景里</strong>。</p>
+            </div>
+            <div class="contrast-strip" id="contrast-strip">
+              <div><span>画布</span><em>Cuando era niño, vivía en Madrid.</em><small>背景状态</small></div>
+              <div class="contrast-divider">对照</div>
+              <div><span>一点</span><em>Ayer viví un momento increíble.</em><small>一次完整事件</small></div>
+            </div>
+            <div class="layer-block memory-layer">
+              <span class="layer-tag">最小记忆层</span>
+              <p id="memory-copy"><strong>只留一组触发器：</strong>背景 → 未完成；落点 → 简单过去。词尾先从例子里长出来。</p>
+            </div>
+          </div>
+        </article>
+
+        <section class="callout-zone" id="callout-zone" hidden>
+          <div class="callout-heading">
+            <div>
+              <p class="console-label">现在调用一次</p>
+              <h2 id="callout-title">如果你要说“昨天我住在塞维利亚”，你会怎么摆放事件？</h2>
+            </div>
+            <span class="callout-step">调用</span>
+          </div>
+          <p class="callout-support" id="callout-support">先选视角，再找词尾。不要求一次说对。</p>
+          <div class="choice-row" id="choice-row"></div>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          <div class="next-row">
+            <button class="button button-quiet" id="skip-button">先放着，继续看</button>
+            <button class="button button-primary" id="next-button" disabled>完成这次调用</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="map-view" aria-labelledby="map-heading" hidden>
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">不是课程目录，是因果路径</p>
+            <h1 id="map-heading">把西语还原成四个动作。</h1>
+          </div>
+        </div>
+        <div class="principle-map">
+          <article class="map-row" data-lesson="0"><div class="map-index">01</div><div class="map-copy"><p class="map-type">摆放视角</p><h2>事件是背景，还是落点？</h2><p>时间形式先表达说话人如何取景，不是给过去贴标签。</p></div><span class="map-state"></span></article>
+          <article class="map-row" data-lesson="1"><div class="map-index">02</div><div class="map-copy"><p class="map-type">承诺程度</p><h2>这是事实，还是我的愿望？</h2><p>语气先区分“我把它当作事实”与“我希望它发生”。</p></div><span class="map-state"></span></article>
+          <article class="map-row" data-lesson="2"><div class="map-index">03</div><div class="map-copy"><p class="map-type">关系方向</p><h2>动作经过谁，落到谁？</h2><p>代词不是装饰词，它把动作的接收者钉在句子里。</p></div><span class="map-state"></span></article>
+          <article class="map-row" data-lesson="3"><div class="map-index">04</div><div class="map-copy"><p class="map-type">信息位置</p><h2>新信息放哪里，已知信息放哪里？</h2><p>句子顺序服务于注意力：先搭共同画面，再把新东西放进来。</p></div><span class="map-state"></span></article>
+        </div>
+      </section>
+
+      <section class="view" id="review-view" aria-labelledby="review-heading" hidden>
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">只回看还没变成调用的东西</p>
+            <h1 id="review-heading">最小回看。</h1>
+          </div>
+        </div>
+        <div class="review-panel" id="review-panel">
+          <div class="empty-review" id="empty-review"><span class="empty-mark">✓</span><h2>这里暂时没有待回看的原理。</h2><p>继续通过语境理解。系统只保留你主动标记为“再看一次”的内容，不制造欠账。</p><button class="button button-primary" data-view-target="learn">回到输入</button></div>
+          <div id="review-list" hidden></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
